@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2</title>
+</head>
+<body>
+    <h1>Lista de nomes</h1>
+    <label for="">Digite um nome:</label>
+    <input type="text" id="nome" />
+    <button id="enviar">enviar</button>
+
+    <ul id="nomes">
+      <li>João</li>
+      <li>Claudio</li>
+      <li>Marcio</li>
+    </ul>
+
+    <script>
+      let input = document.getElementById("nome");
+      const botao = document.getElementById("enviar");
+      const lista = document.getElementById("nomes");
+      const itens = document.querySelectorAll("li");
+
+      botao.addEventListener("click", buscar);
+
+      function buscar() {
+        for (let i = 0; i < itens.length; i++) {
+          if (itens[i].textContent == input.value) {
+            itens[i].style.fontWeight = "bold";
+          }
+        }
+      }
+    </script>
+</body>
+</html>

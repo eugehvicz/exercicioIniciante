@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <h1 class="titulo">Tabuada</h1>
+    <label for="numero">Digite um número:</label>
+    <input type="text" id="numero" />
+
+    <button id="botao">enviar numero</button>
+    <div id="resultado"></div>
+
+    <script>
+      let input = document.getElementById('numero');
+      const botao = document.getElementById('botao');
+      const resultado = document.getElementById('resultado');
+
+      botao.addEventListener("click", () => {
+        const valor = parseInt(input.value);
+        for (let i = 1; i <= 10; i++) {
+          const linha = document.createElement("p");
+          linha.textContent = `${valor} x ${i} = ${valor * i}`;
+          resultado.appendChild(linha);
+          
+        }
+      });
+    </script>
+  </body>
 </html>
